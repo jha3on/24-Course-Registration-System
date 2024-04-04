@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  web:
+    resources:
+      cache.period: 0
+      static-locations: file:src/main/resources/static
+  thymeleaf:
+    cache: false
+    prefix: file:src/main/resources/templates
+    suffix: .html
+
+logging:
+  level:
+    org.hibernate.SQL: debug

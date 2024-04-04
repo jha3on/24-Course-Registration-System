@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8">
+  <title>대학교 : 로그인</title>
+  <link th:href="@{/css/reset.css}" rel="stylesheet">
+  <link th:href="@{/css/app.css}" rel="stylesheet">
+  <link th:href="@{/css/user-login.css}" rel="stylesheet">
+  <script th:src="@{/js/axios.min.js}" charset="utf-8" defer></script>
+  <script th:src="@{/js/sockjs.min.js}" charset="utf-8" defer></script>
+  <script th:src="@{/js/stomp.min.js}" charset="utf-8" defer></script>
+  <script th:src="@{/js/client.js}" charset="utf-8" defer></script>
+  <script th:src="@{/js/user-login.js}" charset="utf-8" defer></script>
+</head>
+
+<body>
+<div class="app">
+  <th:block th:replace="~{/layout/pageHeaderV1 :: pageHeaderV1}"/>
+  <div class="content">
+    <!-- 사용자 로그인 -->
+    <div class="user-login">
+      <div class="user-login-title">
+        <span class="user-login-title-text">
+          수강 신청 로그인
+        </span>
+        <div class="user-login-guide">
+          <span class="user-login-guide-text">
+            본인의 <span class="text-essential">학번</span>, <span class="text-essential">비밀번호</span>를 입력하세요.
+          </span>
+        </div>
+      </div>
+      <div class="user-login-content">
+        <form class="form">
+          <div class="form-field">
+            <label class="form-field-label">
+              <input class="user-login-number js" type="text" placeholder="학번">
+            </label>
+          </div>
+          <div class="form-field">
+            <label class="form-field-label">
+              <input class="user-login-password js" type="password" placeholder="비밀번호">
+            </label>
+          </div>
+          <div class="form-button">
+            <button class="user-login-button js" type="button">로그인</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- 사용자 로그인 정보 -->
+    <div class="user-login-info">
+      <p class="text">로그인 후, <span class="text-essential">강의 목록</span>, <span class="text-essential">수강 신청</span>, <span class="text-essential">예비 수강 신청</span> 페이지에 접근할 수 있습니다.</p>
+      <p class="text">1. 강의 목록 페이지에서 본 학기에 개설된 강의를 확인할 수 있습니다.</p>
+      <p class="text">2. 수강 신청 페이지에서 희망하는 강의를 신청할 수 있습니다.</p>
+      <p class="text">3. 예비 수강 신청 페이지에서 희망하는 강의를 장바구니에 담을 수 있습니다.</p>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

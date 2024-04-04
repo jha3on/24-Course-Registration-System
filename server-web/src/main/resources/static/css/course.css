@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+/**
+ * 강의 검색 스타일링
+ */
+.course-search {
+  padding: 30px;
+  border: 1px solid var(--gray-300);
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+}
+.course-search .course-search-title {}
+.course-search .course-search-title-text {
+  font-size: 18px;
+  font-weight: 700;
+}
+.course-search .course-search-content {
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.course-search .course-search-content .course-search-info {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.course-search .course-search-content .course-search-info .course-search-select {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.course-search .course-search-content .course-search-info .course-select-title {
+  width: 30%;
+  display: flex;
+}
+.course-search .course-search-content .course-search-info .course-select-title-text {
+  font-size: 14px;
+  font-weight: 700;
+}
+.course-search .course-search-content .course-search-info .course-select-content {
+  width: 70%;
+}
+.course-search .course-search-content .course-search-info-guide {
+  padding: 0 0 15px 0;
+  border-bottom: 1px solid var(--gray-300);
+}
+.course-search .course-search-content .course-search-info-guide .text {
+  font-size: 14px;
+}
+.course-search .course-search-content .course-search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/**
+ * 강의 검색 내역 스타일링
+ */
+.course-search-details {
+  margin: 15px 0 0 0;
+  padding: 30px;
+  border: 1px solid var(--gray-300);
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+}
+.course-search-details .course-search-details-title {}
+.course-search-details .course-search-details-title-text {
+  font-size: 18px;
+  font-weight: 600;
+}
+.course-search-details .course-search-details-content {
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:fragment="courseRegistrationQueueModal">
+  <div class="v1 modal-overlay js">
+    <div class="modal">
+      <div class="modal-title">
+        <span class="course-registration-title">수강 신청 대기 중</span>
+      </div>
+      <div class="modal-content">
+        <div class="course-registration-time">
+          <p class="course-registration-waiting-time">예상 대기 시간<span class="course-registration-waiting-time-minute js">0</span>분<span class="course-registration-waiting-time-second js">0</span>초</p>
+        </div>
+        <div class="course-registration-progress">
+          <div class="course-registration-progress-gauge js"></div>
+        </div>
+        <div class="course-registration-count">
+          <p class="course-registration-waiting-count">대기 순번<span class="course-registration-waiting-count-number js">0</span>번</p>
+        </div>
+      </div>
+      <div class="modal-close">
+        <button class="course-registration-close-button js" type="button">취소</button>
+      </div>
+    </div>
+  </div>
+</th:block>
+
+</html>

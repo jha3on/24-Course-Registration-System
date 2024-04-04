@@ -1,0 +1,225 @@
+@charset "utf-8";
+
+.course-search {
+  padding: 30px;
+  border: 1px solid var(--gray-300);
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+}
+.course-search .course-search-title {}
+.course-search .course-search-title-text {
+  font-size: 18px;
+  font-weight: 700;
+}
+.course-search .course-search-content {
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.course-search .course-search-content .course-search-info {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.course-search .course-search-content .course-search-info .course-search-select {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.course-search .course-search-content .course-search-info .course-select-title {
+  width: 30%;
+  display: flex;
+}
+.course-search .course-search-content .course-search-info .course-select-title-text {
+  font-size: 14px;
+  font-weight: 700;
+}
+.course-search .course-search-content .course-search-info .course-select-content {
+  width: 70%;
+}
+.course-search .course-search-content .course-search-info-guide {
+  padding: 0 0 15px 0;
+  border-bottom: 1px solid var(--gray-300);
+}
+.course-search .course-search-content .course-search-info-guide .text {
+  font-size: 14px;
+}
+.course-search .course-search-content .course-search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.course-search-details {
+  margin: 15px 0 0 0;
+  padding: 30px;
+  border: 1px solid var(--gray-300);
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+}
+.course-search-details .course-search-details-title {}
+.course-search-details .course-search-details-title-text {
+  font-size: 18px;
+  font-weight: 600;
+}
+.course-search-details .course-search-details-content {
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.course-registration-details {
+  margin: 15px 0 0 0;
+  padding: 30px;
+  border: 1px solid var(--gray-300);
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+}
+.course-registration-details .course-registration-details-title {}
+.course-registration-details .course-registration-details-title-text {
+  font-size: 18px;
+  font-weight: 600;
+}
+.course-registration-details .course-registration-details-content {
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.course-registration-details .course-registration-user {
+  margin: 20px 0 0 0;
+}
+.course-registration-create-button,
+.course-registration-delete-button {
+  height: 27px;
+  font-size: 13px;
+}
+
+.course-registration-cart-details {
+  margin: 15px 0 0 0;
+  padding: 30px;
+  border: 1px solid var(--gray-300);
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+}
+.course-registration-cart-details .course-registration-cart-details-title {}
+.course-registration-cart-details .course-registration-cart-details-title-text {
+  font-size: 18px;
+  font-weight: 600;
+}
+.course-registration-cart-details .course-registration-cart-details-content {
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.course-search-details-table-content th,
+.course-search-details-table-content td,
+.course-registration-cart-details-table-content th,
+.course-registration-cart-details-table-content td {
+  padding: 6px 4px 6px 4px;
+}
+.course-registration-cart-create-button,
+.course-registration-cart-delete-button {
+  height: 27px;
+  font-size: 13px;
+}
+
+
+
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  backdrop-filter: blur(1px);
+  background: rgba(0, 0, 0, 0.1);
+}
+.modal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  top: 50%;
+  width: 300px;
+  height: 250px;
+  padding: 25px 15px 15px 15px;
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: 8px;
+  transform: translateY(-50%);
+}
+.modal-title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.modal-title .course-registration-title {
+  font-size: 26px;
+  font-weight: 700;
+}
+.modal-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.modal-content .course-registration-time {
+  margin: 10px 0 15px 0;
+}
+.modal-content .course-registration-waiting-time {
+  font-size: 16px;
+  font-weight: 400;
+}
+.modal-content .course-registration-waiting-time-minute,
+.modal-content .course-registration-waiting-time-second {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 4px 0 4px;
+}
+.modal-content .course-registration-progress {
+  width: 100%;
+  height: 16px;
+  border-radius: 6px;
+  background: var(--gray-300);
+}
+.modal-content .course-registration-progress-gauge {
+  width: 0;
+  height: 16px;
+  border-radius: 6px;
+  background: var(--gray-600);
+}
+.modal-content .course-registration-count {
+  margin: 10px 0 15px 0;
+}
+.modal-content .course-registration-waiting-count {
+  font-size: 16px;
+  font-weight: 400;
+}
+.modal-content .course-registration-waiting-count-number {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 4px 0 4px;
+}
+.modal-close {
+  width: 100%;
+}
+.modal-close .course-registration-close-button {
+  width: 100%;
+}

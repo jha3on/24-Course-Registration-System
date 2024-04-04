@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>대학교 : 강의</title>
+  <link th:href="@{/css/reset.css}" rel="stylesheet">
+  <link th:href="@{/css/app.css}" rel="stylesheet">
+  <link th:href="@{/css/course.css}" rel="stylesheet">
+  <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/axios/0.9.1/axios.min.js}"></script>
+  <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.min.js}"></script>
+  <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js}"></script>
+  <script th:src="@{/js/client.js}" charset="utf-8" defer></script>
+  <script th:src="@{/js/course.js}" charset="utf-8" defer></script>
+</head>
+
+<body>
+<div class="app">
+  <th:block th:replace="~{/layout/pageHeaderV2 :: pageHeaderV2}"/>
+  <div class="content">
+    <!-- 강의 검색 -->
+    <div class="course-search">
+      <div class="course-search-title">
+        <span class="course-search-title-text">강의 검색</span>
+      </div>
+      <div class="course-search-content">
+        <div class="course-search-info">
+          <div class="course-search-select">
+            <div class="course-select-title">
+              <span class="course-select-title-text">개설 연도 (*)</span>
+            </div>
+            <div class="course-select-content">
+              <label class="course-select-label">
+                <select class="course-year-select js">
+                  <option value="">선택</option>
+                  <option value="2023" selected>2023</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div class="course-search-select">
+            <div class="course-select-title">
+              <span class="course-select-title-text">개설 학기 (*)</span>
+            </div>
+            <div class="course-select-content">
+              <label class="course-select-label">
+                <select class="course-semester-select js">
+                  <option value="">선택</option>
+                  <option value="1" selected>1학기</option>
+                  <option value="2">2학기</option>
+                </select>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="course-search-info-guide">
+          <span class="text"><span class="text-essential">개설 연도</span>, <span class="text-essential">개설 학기</span>는 필수 선택하세요.</span>
+        </div>
+        <div class="course-search-info">
+          <div class="course-search-select">
+            <div class="course-select-title">
+              <span class="course-select-title-text">강의 구분 (*)</span>
+            </div>
+            <div class="course-select-content">
+              <label class="course-select-label">
+                <select class="course-type-select js">
+                  <option value="" selected>선택</option>
+                  <option value="교양">교양</option>
+                  <option value="교직">교직</option>
+                  <option value="전공">전공</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div class="course-search-select">
+            <div class="course-select-title">
+              <span class="course-select-title-text">담당 대학 (*)</span>
+            </div>
+            <div class="course-select-content">
+              <label class="course-select-label">
+                <select class="college-select js">
+                  <option value="" selected>선택</option>
+                  <option value="1">교양대학</option>
+                  <option value="2">인문대학</option>
+                  <option value="3">경영대학</option>
+                  <option value="4">사회과학대학</option>
+                  <option value="5">소프트웨어대학</option>
+                </select>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="course-search-info">
+          <div class="course-search-select">
+            <div class="course-select-title">
+              <span class="course-select-title-text">담당 학부</span>
+            </div>
+            <div class="course-select-content">
+              <label class="course-select-label">
+                <select class="college-division-select js">
+                  <option value="" selected>-</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div class="course-search-select">
+            <div class="course-select-title">
+              <span class="course-select-title-text">담당 학과</span>
+            </div>
+            <div class="course-select-content">
+              <label class="course-select-label">
+                <select class="college-department-select js">
+                  <option value="" selected>-</option>
+                </select>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="course-search-info-guide">
+          <span class="text"><span class="text-essential">강의 구분</span>, <span class="text-essential">담당 대학</span>은 필수 선택하세요.</span>
+        </div>
+        <div class="course-search-button">
+          <button class="search-button js" type="button">선택 검색</button>
+          <button class="search-clear-button js" type="button">다시 선택</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 강의 검색 내역 -->
+    <div class="course-search-details">
+      <div class="course-search-details-title">
+        <span class="course-search-details-title-text">강의 검색 내역</span>
+      </div>
+      <div class="course-search-details-content">
+        <table class="course-search-details-table">
+          <thead class="course-search-details-table-header">
+            <tr>
+              <th>대학명</th>
+              <th>학부명</th>
+              <th>학과명</th>
+              <th>과목명</th>
+              <th>구분</th>
+              <th>학점</th>
+              <th>강의번호</th>
+              <th>강의시간</th>
+              <th>수강정원</th>
+            </tr>
+          </thead>
+          <tbody class="course-search-details-table-content js"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>
